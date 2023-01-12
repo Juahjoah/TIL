@@ -1,7 +1,7 @@
 # TIL
 
 ## 20230112 TIL
-#### - MARKDOWN
+### - MARKDOWN
 
 1. 마크다운(Markdown)이란?
 
@@ -18,7 +18,7 @@
 > 참고 링크 : [마크다운 문법 참고](https://www.markdownguide.org/cheat-sheet/)  
 
 
-#### - Git/Github
+### - Git/Github
 
 2. Git 이란?
 
@@ -31,3 +31,8 @@ Git이 프로그램이라면, Git Hub는 그 프로그램을 사용하는 저장
 > README.md : 프로젝트에 대한 설명 문서. GitHub 프로젝트에서 가장 먼저 보는 문서로 보통 소프트웨어와 함께 배포된다.
 
 > Repository : 특정 디렉토리를 버전 관리하는 저장소.
+
+</br>
+</br>
+</br>
+😲 일단 여기까지 써보고 업로드 해볼까요?
