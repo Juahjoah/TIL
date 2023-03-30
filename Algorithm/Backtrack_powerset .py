@@ -1,3 +1,4 @@
+# 4
 # powerset 만들기
 # {1,2,3,4,5,6,7,8,9,10}의 powerset 중 원소의 합이 10인 부분집합을 모두 출력
 
@@ -47,7 +48,7 @@ N = 10
 arr = [0] * N                 # arr[i]를 포함시키는 경우 1
 powerset(arr, 0, N, 0)        # arr_여부에 대한 리스트, 선택한 개수, 선택해야하는 개수
 
-
+# 3
 # bit 연산자로 만든 powerset
 '''
 def f(i, k, s, key):
@@ -75,6 +76,7 @@ f(0, N, 0, key)
 print(cnt, c)
 '''
 
+# 1
 # 기본코드
 '''
 def powerset(arr, k, n):
@@ -98,4 +100,36 @@ lst = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 N = 10
 arr = [0] * N               # arr[i]를 포함시키는 경우 1
 powerset(arr, 0, N)         # arr_여부에 대한 리스트, 선택한 개수, 선택해야하는 개수
+'''
+
+# 2
+# powerset을 구하는 백트래킹 알고리즘
+# {1,2,3}의 부분 집합 구하기
+# 0과 1로 표현해 1, 2, 3이 각각 포함되고, 포함되지 않는다는 점을 표현
+'''
+[0, True, True, True] = [0, 1, 1, 1] = {1,2,3}
+[0, True, True, False]
+[0, True, False, True]
+[0, True, False, False]
+[0, False, True, True]
+[0, False, True, False]
+[0, False, False, True]
+[0, False, False, False] = [0, 0, 0, 0] = {}
+'''
+'''
+def backtrack(a, k, input):
+
+    if k == input : # 3 == 3 이 되면,
+        print(a)    # 부분집합을 출력
+    else:
+        k += 1      # 반복되면서 인덱스 값이 하나씩 증가
+
+        a[k] = True                 # 1 = 부분 집합에 요소 k(1or 2or 3)가 포함됨.
+        backtrack(a, k, input)      # 되돌아가서 다시 시작
+        a[k] = False                # 0 = 부분 집합에 요소 k(1or 2or 3)가 포함되지 않음.
+        backtrack(a, k, input)      # 되돌아가서 다시 시작
+
+NMAX = 4                            # 인덱스에 1,2,3이 포함되게 하기 위해서 0~3으로 배열을 지정
+a = [0] * NMAX                      # a = [0,0,0,0]
+backtrack(a, 0, 3)                  # a의 0~3 인덱스를  돌면서 확인
 '''
