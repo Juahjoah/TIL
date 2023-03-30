@@ -48,6 +48,33 @@ arr = [0] * N                 # arr[i]를 포함시키는 경우 1
 powerset(arr, 0, N, 0)        # arr_여부에 대한 리스트, 선택한 개수, 선택해야하는 개수
 
 
+# bit 연산자로 만든 powerset
+'''
+def f(i, k, s, key):
+    global cnt
+    global c
+    c += 1
+    if i == k:
+        if s == key:
+            print(bit)
+            cnt += 1
+    else:
+        bit[i] = 0
+        f(i+1, k, s, key)                 # A[i] 미포함
+        bit[i] = 1
+        f(i+1, k, s+A[i], key)            # A[i] 포함
+
+
+A = [i for i in range(1, 11)]
+N = 10
+bit = [0]*N
+key = 10
+cnt = 0
+c = 0               # 재귀가 몇 번 돌았을까?
+f(0, N, 0, key)
+print(cnt, c)
+'''
+
 # 기본코드
 '''
 def powerset(arr, k, n):
