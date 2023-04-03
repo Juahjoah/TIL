@@ -23,4 +23,9 @@ ab = "onlyhi";
 // I say onlyhi
 console.log('I say ' + ab)
 // ⭐ 기본적으로 사용하는 것은 const, 필요한 경우에만 let을 사용하기, var는 사용하지 말자!⭐
-// 왜 현재는 var를 사용하지 않을까? 
+
+// 변수
+
+
+<hr>
+<h1>2. </h1>
