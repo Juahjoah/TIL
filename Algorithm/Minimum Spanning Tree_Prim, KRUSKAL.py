@@ -8,6 +8,7 @@
 
 # Kruskal MST 알고리즘
 # 네트워크(가중치를 간선에 할당한 그래프)의 모든 정점을 최소 비용으로 연결하는 최적 해답을 구하기
+# 간선 선택을 기반 으로 하는 알고리즘으로 이전 단계에서 만들어진 신장 트리와는 상관없이 무조건 최소 간선만을 선택하는 방법
 # 코드 구현
 def find_set(x):            # x가 속한 집합의 대표 리턴
     while x != rep[x]:      # x == rep[x] 까지
@@ -18,31 +19,39 @@ def union(x, y):            # y의 대표 원소가 x의 대표원소를 가리�
     rep[find_set(y)] = find_set(x)
 
 
-V, E = map((int, input().split()))  # 0~V 정점 번호, E 간선 수
+V, E = map((int, input().split()))  # 정점 V, 간선 E
 # makeset()
 rep = [i for i in range(V+1)]
 
 graph = []
-for _ in range(E):
+for i in range(E):
     v1, v2, w = map(int, input().split())
-    graph.append([v1, v2, w])
+    graph.append([v1, v2, w])       # 노드 - 노드, 그 사이의 비용
     # graph.append([w, v1, v2])
 
 # (1) 가중치 기준 오름차순 정렬
 graph.sort(key=lambda x:x[2])
 # graph.sort()
 
-# (2) N개 정점(V+1), N-1 개의 간선 선택
+# (2) 정렬된 간선 리스트에서 순서대로 사이클을 형성하지 않은 간선 선택(가장 낮은 가중치 먼저 선택, 사이클을 형성하는 간선 제외)
+# N개 정점(V+1), N-1 개의 간선 선택
 N = V + 1
 s = 0                                   # MST에 포함된 간선의 가중치의 합
-cnt = 0
+cnt = 0                                 # 종료를 조건을 추가하기 위한 변수
 MST = []                                # MST가 어떻게 만들어졌는지 확인하기 위한 값. 꼭 필요한거 아님.
-for u, v, w in graph :                  # 가중치가 작은 것부터~
-    if find_set(u) != find_set(v):      # 사이클이 생기지 않으면,
+for u, v, w in graph :                  # 가중치가 작은 것부터 돌면서 확인하기
+    if find_set(u) != find_set(v):      # 사이클이 생기지 않은 노드라면,
         cnt += 1
-        s += w                          # 가중치의 합
-        MST.append([u,v,w])
+        s += w                          # 비용가중치의 합
+        MST.append([u,v,w])             # 해당 간선을 현재의 MST(최소 비용 신장 트리)의 집합에 추가
         union(u, v)
-        if cnt == N-1 :                 # MST 구성 완료
+        if cnt == N-1 :                 # cnt가 V개 되면 다 돌았다는 뜻. MST 구성 완료 
             break
+# 알고리즘 자체가 최소를 선택하기 때문에 그냥 출력 가능
 print(s)
+print(MST)
+
+#1 [[0, 1, 1], [0, 2, 1]]
+#2 [[2, 4, 1], [1, 4, 2], [0, 2, 3], [0, 3, 7]]
+#3 [[1, 4, 2], [2, 4, 3], [0, 2, 7], [2, 3, 10]]
+
