@@ -22,10 +22,46 @@ let ab = "hihello";
 ab = "onlyhi";
 // I say onlyhi
 console.log('I say ' + ab)
-// ⭐ 기본적으로 사용하는 것은 const, 필요한 경우에만 let을 사용하기, var는 사용하지 말자!⭐
-
-// 변수
+// ⭐ 기본적으로 사용하는 것은 const, 필요한 경우에만 let을 사용하기, var는 사용하지 말자!⭐ → check.md 1.
 
 
-<hr>
-<h1>2. </h1>
+1.2. Booleans
+// true(1), false(0) 
+const areYouOkay = true; 
+console.log(areYouOkay);
+const anybodyHere = null;
+// null : 비어있는 것이 아니라, 아무것도 없는 상태로 채워져있는 값. 의도적으로 비어있는 것을 표현함.
+console.log(anybodyHere);
+// undefined
+let something; // 변수를 만들었지만, 값을 주고 있지는 않음.
+console.log(something);
+
+
+1.3. Arrays
+// const dayOfweek = mon + tue + wed + thu + fri;
+// ① 대괄호 [ ] 로 선언하기 ② array 안 각각의 항목은 쉼표로 분리
+const dayOfweek = ["mon", "tue", "wed", "thu", "fri", "sat"];
+const nonsense = [1, 2, "hello", false, true, null, undefined, "hey"];
+
+console.log(dayOfweek);
+console.log(nonsense);
+// Get Item from Arry
+console.log(dayOfweek[4]);
+// Add one more day to the array
+dayOfweek.push("sun");
+console.log(dayOfweek);
+
+
+1.4. Objects
+const player = {
+    name: "hiname",
+    points: 1010,
+    handsome: false,
+}
+console.log(player);
+console.log(player.name);
+console.log(player["name"]);
+// object는 내부 속성 수정이 가능함.
+player.lastName = "potato";
+player.points = player.points + 428;
+console.log(player);
