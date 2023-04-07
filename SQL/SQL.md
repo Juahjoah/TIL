@@ -61,3 +61,40 @@
     - soft_delete : 지우기는 지우는데, 지웠다고 표시하는 삭제
     - hard_delete : 우리가 배운 delete. 온전한 삭제
 
+<br>
+<br>
+
+2. JOIN : 두 개 이상의 테이블에서 데이터를 가져와 결합하는 것
+
+
+- 테이블을 여러 개로 나누는 것은 당연하고, 필수적인 과정 (ex. articles, users, roles … → 각 게시글을 누가 작성했는지, 누가 어떤 role을 가졌는지 알 수 있는가?)
+- 테이블을 나눠놓으면, 조회할 때 여러 테이블의 값을 가져와서 조회해야하는 상황이 발생 = 이게 자연스러운 상황, 결국 우리가 조회하려면 모아서 하나의 테이블로 만들어야함.
+- JOIN : 두 개 이상의 테이블에서 데이터를 가져와 결합하는 것을 말함.
+- 각 테이블 별로 join을 해서 정보를 알 수 있음.
+
+2.1. Cross Join : 자주 쓰지는 않음. 모든 조합 출력. 곱하기 같은거라고 생각하기
+
+- `SELETE * FROM articles, users;` : 이렇게 해도 나름 가져와줌. 하지만 원하는 방식은 아님. userId와 roleId 가 동일하게 맞춰진 형태로 테이블이 합쳐지길 원함.    
+    - 그럼, `SELECT * FROM articles, users WHERE articles.userid = users.id;` 그리고, `SELECT * FROM articles, users WHERE userid = users.id;` 이 방식으로 진행
+
+2.2. INNER JOIN : 두 테이블에서 일치하는 데이터만 결과 출력
+
+- `{테이블 1} INNER JOIN {테이블2} ON {조건식}`
+- 더 명확하기 때문에 되도록 inner join을 활용해 합치는 것이 좋음.
+- ⭐ `SELECT * FROM articles INNER JOIN users ON userId=users.rowld;`
+- WHERE를 사용했을 때와의 차이점에 대해서 생각해보자! → 내부적으로 데이터를 합쳐줌.(엮어줌)
+
+2.3. OUTER JOIN
+
+- 내용이 수정되어 데이터의 길이가 맞지 않는 경우, 혹은 값이 누락되어 빈 값이 있는 경우
+
+2.3.1. LEFT JOIN : 왼쪽 테이블의 데이터를 기준으로 오른쪽 데이터 결합, 없으면 NULL
+
+`SELECT * FROM articles LEFT JOIN users ON userId=users.rowld;`
+
+- 그럼 일단 왼쪽에 있는 데이터는 전부 가져와 진행. 데이터가 비어있는 경우, Null로 자동 설정
+- 설계 시 잘 확인하고, 생각해서 정하기
+
+2.3.2. RIGHT JOIN : 오른쪽 테이블의 데이터를 기준으로 왼쪽 데이터 결합, 없으면 NULL
+
+`SELECT * FROM articles RIGHT JOIN users ON userId=users.rowld;`
