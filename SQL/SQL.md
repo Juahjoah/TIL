@@ -60,3 +60,4 @@
 - 참고] soft_delete 와 hard_delete
     - soft_delete : 지우기는 지우는데, 지웠다고 표시하는 삭제
     - hard_delete : 우리가 배운 delete. 온전한 삭제
+
