@@ -1,8 +1,12 @@
-1. SQL : DML 활용 및 CRUD
+1. SQL Commands
 
-1.1. Grouping data
 
-1.1.1 Aggregate function : “집계함수” 여러 행의 값을 1개의 값으로 뽑아낼 때 사용하는 함수
+
+2. SQL : DML 활용 및 CRUD
+
+2.1. Grouping data
+
+2.1.1 Aggregate function : “집계함수” 여러 행의 값을 1개의 값으로 뽑아낼 때 사용하는 함수
 
 - 값 집합의 최대값(MAX), 최소값(MIN), 평균(AVG), 합계(SUM) 및 개수(COUNT)를 계산할 수 있음.
     - SELECT 문의 GROUP BY 절과 함께 종종 사용
@@ -13,7 +17,7 @@
 - AVG : 데이터의 평균 값 `SELECT AVG(balance) FROM users;`
 - 전라북도로 평균을 구해서 정리하기 `SELECT country, avg(balance) FROM users WHERE country="전라북도";` → 조건이 많아져서 불편할 때는, GROUP BY
 
-1.1.2. GROUP BY 
+2.1.2. GROUP BY 
 
 - `SELECT column_1, aggragate_function(column_2) FROM table_name GROUP BY column_1, column_2;`
 - 특정 그룹으로 묶인 결과를 생성함.
@@ -22,9 +26,9 @@
 - SELECT 문의 FROM 절 뒤에 작성 : WHERE 절이 포함된 경우에는 WHERE 절 뒤에 작성
 
 
-1.2. Changing data : 데이터를 삽입, 수정 삭제하기
+2.2. Changing data : 데이터를 삽입, 수정 삭제하기
 
-1.2.1. INSERT : 새 행을 테이블에 삽입
+2.2.1. INSERT : 새 행을 테이블에 삽입
 
 - **⭐ 문법 규칙 ⭐**
     - 1) INSERT INTO 키워드 뒤에 데이터를 삽입할 테이블의 이름을 지정
@@ -37,7 +41,7 @@
         `INSERT INTO classmate VALUES('김철수', 30, '경기'), ('이영미',31,'강원'), ('박진성', 26, '전라'), ('최지수', 12, '충청'), ('정요한', 28, '경상');`
         
 
-1.2.2. UPDATE : 새 행을 테이블에 삽입
+2.2.2. UPDATE : 새 행을 테이블에 삽입
 
 - 순서
     1) UPDATE 절 이후에 업데이트 할 테이블을 지정
@@ -46,7 +50,7 @@
         - WHERE절은 선택사항. 생략하는 경우, UPDATE 문은 테이블의 모든 행에 있는 데이터를 업데이트함.
     4) 선택적으로 ORDER BY 및 LIMIT 절을 사용하여 업데이트할 행 수를 지정할 수도 있음.
 
-1.2.3. DELETE : 테이블에서 행을 제거
+2.2.3. DELETE : 테이블에서 행을 제거
 
 - 한 행, 여러 행 및 모든 행을 삭제할 수 있음.
 - 문법규칙
@@ -64,7 +68,7 @@
 <br>
 <br>
 
-2. JOIN : 두 개 이상의 테이블에서 데이터를 가져와 결합하는 것
+3. JOIN : 두 개 이상의 테이블에서 데이터를 가져와 결합하는 것
 
 
 - 테이블을 여러 개로 나누는 것은 당연하고, 필수적인 과정 (ex. articles, users, roles … → 각 게시글을 누가 작성했는지, 누가 어떤 role을 가졌는지 알 수 있는가?)
@@ -72,29 +76,29 @@
 - JOIN : 두 개 이상의 테이블에서 데이터를 가져와 결합하는 것을 말함.
 - 각 테이블 별로 join을 해서 정보를 알 수 있음.
 
-2.1. Cross Join : 자주 쓰지는 않음. 모든 조합 출력. 곱하기 같은거라고 생각하기
+3.1. Cross Join : 자주 쓰지는 않음. 모든 조합 출력. 곱하기 같은거라고 생각하기
 
 - `SELETE * FROM articles, users;` : 이렇게 해도 나름 가져와줌. 하지만 원하는 방식은 아님. userId와 roleId 가 동일하게 맞춰진 형태로 테이블이 합쳐지길 원함.    
     - 그럼, `SELECT * FROM articles, users WHERE articles.userid = users.id;` 그리고, `SELECT * FROM articles, users WHERE userid = users.id;` 이 방식으로 진행
 
-2.2. INNER JOIN : 두 테이블에서 일치하는 데이터만 결과 출력
+3.2. INNER JOIN : 두 테이블에서 일치하는 데이터만 결과 출력
 
 - `{테이블 1} INNER JOIN {테이블2} ON {조건식}`
 - 더 명확하기 때문에 되도록 inner join을 활용해 합치는 것이 좋음.
 - ⭐ `SELECT * FROM articles INNER JOIN users ON userId=users.rowld;`
 - WHERE를 사용했을 때와의 차이점에 대해서 생각해보자! → 내부적으로 데이터를 합쳐줌.(엮어줌)
 
-2.3. OUTER JOIN
+3.3. OUTER JOIN
 
 - 내용이 수정되어 데이터의 길이가 맞지 않는 경우, 혹은 값이 누락되어 빈 값이 있는 경우
 
-2.3.1. LEFT JOIN : 왼쪽 테이블의 데이터를 기준으로 오른쪽 데이터 결합, 없으면 NULL
+3.3.1. LEFT JOIN : 왼쪽 테이블의 데이터를 기준으로 오른쪽 데이터 결합, 없으면 NULL
 
 `SELECT * FROM articles LEFT JOIN users ON userId=users.rowld;`
 
 - 그럼 일단 왼쪽에 있는 데이터는 전부 가져와 진행. 데이터가 비어있는 경우, Null로 자동 설정
 - 설계 시 잘 확인하고, 생각해서 정하기
 
-2.3.2. RIGHT JOIN : 오른쪽 테이블의 데이터를 기준으로 왼쪽 데이터 결합, 없으면 NULL
+3.3.2. RIGHT JOIN : 오른쪽 테이블의 데이터를 기준으로 왼쪽 데이터 결합, 없으면 NULL
 
 `SELECT * FROM articles RIGHT JOIN users ON userId=users.rowld;`
