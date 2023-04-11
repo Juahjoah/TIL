@@ -65,3 +65,21 @@ console.log(player["name"]);
 player.lastName = "potato";
 player.points = player.points + 428;
 console.log(player);
+
+1.5. function
+// function : 코드의 입력을 간소화하고 싶을 때 사용. 어떤 코드를 캡슐화해서 반복할 수 있게 만들어줌.
+// argument : function을 실행하는 동안 어떤 정보를 function에게 보낼 수 있는 방법 sayHello("JJJJJ", 27); 는 2개의 argument를 가지고 있음.
+console.log("Hello, my name is JJJJJ");
+console.log("Hello, my name is AAAAA");
+function sayHello(nameOfPerson, age){
+    // 여기 작성하는 말이 sayHello를 실행할 때마다 반복
+    // console.log("Hello! my name is C"); -> C 부분을 내가 원하는 값으로 지정하고 싶다면?
+    console.log("nameOfPerson");
+    console.log("Hello! my name is " + nameOfPerson + " and I'm " + age);
+}
+
+sayHello();
+console.log(); // 아무것도 값을 주지 않아서 따로 출력되지 않음.
+sayHello("JJJJJ", 27);
+sayHello("WWW", 10);
+sayHello("KKK", 23);
