@@ -311,3 +311,4 @@
 3.3.2. RIGHT JOIN : 오른쪽 테이블의 데이터를 기준으로 왼쪽 데이터 결합, 없으면 NULL
 
 `SELECT * FROM articles RIGHT JOIN users ON userId=users.rowld;`
+
