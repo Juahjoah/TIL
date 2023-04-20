@@ -1,1 +1,143 @@
 <!-- JS 숫자맞추기(UP DOWN) 게임 -->
+<!-- 참조 : https://developer.mozilla.org/ko/docs/Learn/JavaScript/First_steps/A_first_splash -->
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Number guessing game</title>
+
+    <style>
+      html {
+        font-family: sans-serif;
+      }
+
+      body {
+        width: 50%;
+        max-width: 800px;
+        min-width: 480px;
+        margin: 0 auto;
+      }
+      
+      .form input[type="number"] {
+        width: 200px;
+      }
+
+      .lastResult {
+        color: white;
+        padding: 3px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Number guessing game</h1>
+
+    <p>We have selected a random number between 1 and 100. See if you can guess it in 10 turns or fewer. We'll tell you if your guess was too high or too low.</p>
+
+    <div class="form">
+      <label for="guessField">Enter a guess: </label>
+      <input type="number" min="1" max="100" required id="guessField" class="guessField">
+      <input type="submit" value="Submit guess" class="guessSubmit">
+    </div>
+
+    <div class="resultParas">
+      <p class="guesses"></p>
+      <p class="lastResult"></p>
+      <p class="lowOrHi"></p>
+    </div>
+
+    <script>
+
+      // Your JavaScript goes here
+      // 1부터 100까지 랜덤으로 숫자 할당 
+      let randomNumber = Math.floor(Math.random()*100)+1
+      // 게임 사용 변수 설정
+      const guesses = document.querySelector(".guesses")
+      const lastResult = document.querySelector(".lastResult")
+      const lowOrHi = document.querySelector(".lowOrHi")
+      // 사용자 입력 변수
+      const guessSubmit = document.querySelector(".guessSubmit")
+      const guessField = document.querySelector(".guessField")
+      // 게임 진행 변수
+      let guessCount = 1
+      let resetButton
+      guessField.focus()
+
+      // 게임 함수 설정
+      function checkGuess() {
+        // alert('I am a placeolder!')
+        const userGuess = Number(guessField.value);
+        if (guessCount === 1) {
+          guesses.textContent = 'Previous guesses: '
+        } 
+        guesses.textContent += userGuess + ' '
+        
+        // 정답이 맞는 경우
+        if (userGuess === randomNumber) {
+          lastResult.textContent = '축하합니다! 정답입니다!'
+          lastResult.style.backgroundColor = 'green'
+          lowOrHi.textContent = ''
+          // 게임리셋
+          setGameOver()
+        } else if (guessCount === 10) {  // 정답이 아닌경우 = 게임오버
+          lastResult.textContent ='Game over!'
+          lowOrHi.textContent = ''
+          setGameOver()
+        } else { // 정답이 아닌 경우
+          lastResult.textContent = '틀렸다!!!'
+          lastResult.style.backgroundColor = 'red'
+          if (userGuess < randomNumber) {
+            lowOrHi.textContent = '그거보다는 크지!'
+          } else if (userGuess > randomNumber) {
+            lowOrHi.textContent = '그거보다는 작지!'
+          } 
+        }
+        // 다음 제출을 위한 준비
+        guessCount++
+        guessField.value = ''
+        guessField.focus()
+      }
+
+        // 이벤트 확인
+        guessSubmit.addEventListener('click', checkGuess)
+
+        // 게임 기능 마무리 = 게임 오버
+        function setGameOver() {
+          guessField.disabled = true
+          guessSubmit.disabled = true
+          resetButton = document.createElement('button')
+          resetButton.textContent = '새 게임을 시작하지.'
+          document.body.append(resetButton)
+          resetButton.addEventListener('click', resetGame)
+        }
+        // 게임 리셋
+        function resetGame() {
+          guessCount = 1 // 게임을 다시 시작하니까 값을 1로 초기화
+        
+          const resetParas = document.querySelectorAll('.resultParas')
+          for (const resetPara of resetParas) {
+            resetPara.textContent = ''
+          }
+          resetButton.parentNode.removeChild(resetButton) // 클릭하면 리셋해야하니까 정보를 다 지운다!
+          // 게임을 시작할 수 있게 초기상태로 전부 재설정
+          guessField.disabled = false
+          guessSubmit.disabled = false
+          guessField.value = ''
+          guessField.focus()
+          lastResult.style.backgroundColor = 'white'
+          randomNumber = Math.floor(Math.random()*100)+1 
+        }
+
+        // 게임을 반복해서 진행할 수 있게 만들어주기
+        const resetParas = document.querySelectorAll('.resultParas p') // resultParas p -> resultParas 박스의 p 태그를 모두 가져옴
+        for (const resetPara of resetParas) {
+          resetPara.textContent = ''
+        }
+
+        // 페이지 로딩이 끝나면 자동으로 input을 하게 만드는 함수
+
+    </script>
+  </body>
+</html>
