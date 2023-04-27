@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+        <!-- {{generateRandomNumber()}} -->
+       <p> 랜덤 숫자 : {{ generateRandomNumber() }} </p>
+       <!-- <p> 또다른 랜덤 숫자 : {{ randomNumber }} </p> randomNumber가 실행되려면 generateRandomNumber가 필수 실행되어야함. -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+      <script>
+      const app = new Vue({
+        el: '#app',
+        data: { 
+            randomNumber:null                 // 여기랑 연결된 부분을 주석처리 해놓은 상태라 다른 요소에 영향을 미치지 않음.
+        //   message: generateRandomNumber(), // 여기 message를 주면 this를 이용해서 값을 넣어줬어야함.
+        },
+        methods: {
+          generateRandomNumber() {
+            // return Math.random()      // 0.771235354
+            // return Math.random() *100 // 77.1235354
+            // return Math.floor(Math.random() *100) // 77
+            return Math.floor(Math.random() * 100);
+        }},
+      })
+      </script>
+      
+  </body>
+</html>
