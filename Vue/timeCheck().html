@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timecheck</title>
+</head>
+<body>
+  <div id="time">
+    <!-- 여기서 한 번만 호출했는데, 왜 계속 시간이 올라가는가? MVVM 패턴으로 동작하기 때문! -->
+    {{ timeCheck() }}
+    <p> 시간이 흐른다 : {{ time }} </p>
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    const time = new Vue({ // Vue 모양 헷갈리지 않게 주의하기!!!
+      el: '#time',         // 이 id로 묶인 모양 안쪽에서는 Vue를 사용할 수 있음.
+      data: {
+        time: 0,
+      },
+      methods: {           // 여기서 mountines? 사용한 사람들이 있음. Vue의 라이프사이클과 관련 - 7, 8일차에 배울 예정
+        timeCheck() {
+          setTimeout(() => { // 여기서 arrow함수 가능? _setTimeout의 콜백이기 때문에 사용가능. 오히려 안쓰면 this가 값을 찾지 못할 것. 지금 원하는건 object(const time)를 찍는것
+            this.time++;
+          }, 1000);
+        //   setTimeout( function() {
+        //     let i = 0; i++;
+        //     timeCount()
+        //     return i
+        //   }, 1000);
+        }
+      }
+    })
+    // MVVM 패턴으로 동작하기 때문! -> setTimeout을 통해서 time의 값이 변함 = 값이 바뀌면서 timeCount 다시 호출됨.
+    // 1초마다 변수 값이 변하기 때문에 계속 랜더링되는 것 = 이 때 다시 호출되면서 반복 동작하는 것
+  </script>
+  
+</body>
+</html>
