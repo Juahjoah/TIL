@@ -20,7 +20,7 @@
       data: {
         time: 0,
       },
-      methods: {           // 여기서 mountines? 사용한 사람들이 있음. Vue의 라이프사이클과 관련 - 7, 8일차에 배울 예정
+      methods: {
         timeCheck() {
           setTimeout(() => { // 여기서 arrow함수 가능? _setTimeout의 콜백이기 때문에 사용가능. 오히려 안쓰면 this가 값을 찾지 못할 것. 지금 원하는건 object(const time)를 찍는것
             this.time++;
