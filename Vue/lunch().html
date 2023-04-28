@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lunch</title>
+</head>
+<body>
+  <div id="app">
+    <h1> 점심메뉴 </h1>
+    <button id="btn" @click="pickOneMenu"> Pick one </button>
+    <p> {{ selectedMenu }} </p>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        // 흐름 : 처음 메뉴들을 담아두고, 기본 값을 null로 해둠. 버튼을 클릭하면, pickOneMenu 메소드가 불러와지고, 메소드에서는 selectedmenu에서 lunch 중 하나를 골라서 반환. 그리고 자동으로 새로고침됨.
+        lunch: ['햄버거', '피자', '치킨', '제육덮밥', '꼬막덮밥', '잔치국수', '냠냠', '한식', '중식', '양식', '일식'],
+        selectedMenu: null, // undifined는 아무것도 없을 때 나오는 값. null은 개발자가 비어있는 상태라고 명시하는 것
+      },
+      methods: {
+        pickOneMenu: function() {
+          this.selectedMenu = _.sample(this.lunch) // 여러개 있는 것 중에 하나 뽑아서 반환
+        }
+      }
+    })
+
+
+  </script>
+    
+</body>
+</html>
