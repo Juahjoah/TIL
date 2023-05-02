@@ -24,3 +24,17 @@
     - SNS에서 요청을 누를 때마다 첫 페이지로 돌아간다? 불편하다 ⇒ 요청이 자연스럽게 진행이 됨. (UX 향상)
 - ③ BE와 FE의 작업 영역을 명확히 분리할 수 있음. → 각자 맡은 역할을 명확히 분리한다. == 협업이 용이
 - 만능은 아님 : 첫 구동 시 필요한 데이터가 많으면 많을 수록 최초 작동 시작까지 오랜 시간이 소요됨. 검색 엔진 최적화(SEO, Search Engine Optimization)가 어려움
+
+
+2. Vue 없이 Vue 기능 구현하기
+- ① Vue CDN 가져오기
+- ② Vue instance 생성 : Vue instance_1개의 Object. 미리 정해진 속성명을 가진 Object
+- ③ `el, data` 설정하기 : data에서는 관리할 속성을 정의
+    - el : 어떤 엘리먼트에 대해 적용되는 건지
+    - data : vue 앱에서 어떤 데이터를 사용할 것인지
+- ④ 선언적 렌더링 `{{}}` : Vue data를 화면에 렌더링
+    - 서버에서 사용하기 : F12/ 상단 더보기 `>>` Vue를 통해서 사용가능.
+    - Vue devtools에서 data를 변경하면 DOM에 반영이 됨.
+- ⑤ input tag에 `v-model` 작성
+    - input에 값을 입력하면 Vue data에 반영되고, Vue data는 DOM에 반영됨.
+- 일일이 입력해야하는 장고와 달리 한번에 관리 할 수 있음.
