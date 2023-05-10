@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        height: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Cat Image</h1>
+      <img v-if="imgSrc" :src="imgSrc" alt="catimg">
+      <p v-else> {{message}} </p>
+      <br>
+      <button @click="getCat"> Get Cat </button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data: {
+          imgSrc: null,
+          message: '로딩중입니다.'
+        },
+        methods: {
+          getCat: function() {
+            imgSrc = null // 로딩 중 이미지를 띄우기 위한 방법
+
+            const API_URL = 'https://api.thecatapi.com/v1/images/search'
+            axios.get(API_URL)
+            .then(response => {
+              console.log(response)
+              this.imgSrc = response.data[0].url
+              // 현재 data는 array 형태로 되어있음.
+            })
+          }
+        },
+        created: function() {
+          this.getCat()
+        },
+        updated: function() { // 화면이 갱신될때마다 호출되는 라이프사이클
+          console.log(this.imgSrc)
+        }
+      });
+    </script>
+  </body>
+</html>

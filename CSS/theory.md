@@ -6,3 +6,5 @@
 - 차이점: 정확히 어디에 있는 font-size 속성값인지에 따라 차이가 발생
 - `em`: 해당 단위가 사용되고 있는 요소의 font-size 속성값이 기준
 - `rem`: `rem`에서 r은 root, 즉 최상위 요소를 font-size 속성값 의미. 즉, html 요소의 font-size 속성값이 기준.
+
+1. 
