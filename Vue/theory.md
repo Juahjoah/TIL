@@ -26,7 +26,7 @@
 
 <br>  
 
-1. Vue 없이 Vue 기능 구현하기
+2. Vue 없이 Vue 기능 구현하기
 - ① Vue CDN 가져오기
 - ② Vue instance 생성 : Vue instance_1개의 Object. 미리 정해진 속성명을 가진 Object
 - ③ `el, data` 설정하기 : data에서는 관리할 속성을 정의
