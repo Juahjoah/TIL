@@ -158,8 +158,8 @@
 
 4.8. v-model
 
-- input에 넣은 내용이 바로 form 안에 적용
-- input에만 쓰는 개념은 아니고, checkbox, radiobtn 등 입력하는 form을 다룰 때는 v-model을 사용 → 특히 input에 많이 사용됨!
+- input에 넣은 내용이 바로 form 안에 적용됨.
+- input에만 쓰는 개념은 아니고, checkbox, radiobtn 등 입력하는 form을 다룰 때는 v-model을 사용함. → 특히 input에 많이 사용됨!
 - Vue instance와 DOM의 양방향 바인딩
 - Vue data 변경 시 v-model로 연결된 사용자 입력 element에도 적용
     
@@ -199,8 +199,9 @@
             },
           }
         })
-      </script>
+      </script>s
     </body>
     </html>
     ```
 
+5.
