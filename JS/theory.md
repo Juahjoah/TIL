@@ -1,6 +1,4 @@
 
-
-
 <h3> 1. JavaScript 기초 문법 </h3>
 
 - let : 블록 스코프 지역 변수를 선언 (추가로 동시에 값을 초기화)
@@ -21,8 +19,7 @@
         - 함수 스코프(function scope) : 함수의 중괄호 `{}` 내부를 가리킴. 함수 스코프를 가지는 변수는 함수 바깥에서 접근이 불가능함.
 
 
-
-<h3> 3. Array Helper Methods </h3>
+<h3> 2. Array Helper Methods </h3>
 
 `map` : `array.map(callback(element[, index[, array]]))` <br>
 - 각 배열에 대해서 콜백 함수를 한 번씩 실행하고, 콜백 함수의 반환 값을 요소로 하는 새로운 배열로 반환
