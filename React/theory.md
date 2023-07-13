@@ -1,6 +1,6 @@
 # React
 
-1. React 구조 파악
+### 1. React 구조 파악
 - `create-react-app` 구조 파악
     - `node_modules`: 프로젝트를 구성하는 모든 패키지 소스가 존재하는 폴더
     - `package.json`: 기본 패키지 외 추가로 설치된 라이브러리/패키지 정보(종류, 버전)가 기록되는 파일 ➡ 모든 프로젝트에 하나씩 필수 존재 
@@ -18,3 +18,97 @@
     - `src`: `index.js`를 포함하여, React의 시작이라고 불림.
     - `App.js`: 현재 화면에 보여지고 있는 초기 컴포넌트로 React Router를 설치하면, 컴포넌트가 최상위 컴포넌트로 App.js 자리에 위치
 <br>
+
+### 2. React Vite   
+`Create React App`
+  - Create React App을 만들기 전에는 여러 도구를 설치하고, JSX를 사용하기 위한 올바를 사전 설정을 하고, 개발 및 프로덕션 환경을 다르게 구성이 필요
+  - 여러 도구를 하나의 패키지로 결합하고 합리적인 기본 구성을 선택한 다음 도구 간의 작은 비호환성을 덮어써 이 문제를 해결
+
+<br>
+
+- 시간이 흐르면서 Create React App의 문제점이 대두
+  - Create React App의 특성 상 낮은 대역 폭에는 다소 시간이 걸리고, 흰 화면 로딩 시간이 길어 사용자 경험에 영향
+  - 로딩 이후 앱 코드가 로드되면서 성능이 낮은 장치에서는 브라우저의 로딩 속도가 느려질 수 있음.
+
+<br>
+
+- 리액트의 유연성은 유용하지만, 완전히 구축된 새 앱에 대해서는 가능한 최상의 자동 설정을 제공할 필요가 있음.
+- Create React App을 더 이상 사용하지 않고 자체 Vite 템플릿을 메인테이닝 할 수 있음.
+- Vite는 esbuild를 이용해서 변경된 부분만 새로 번들링
+-  Vite를 사용하면 개발할 때 속도가 더 빠르고 메모리도 적게 사용
+-  대신, CRA과 비교하면, 빠진 패키지가 존재하기 때문에 해당 부분은 직접 입력해줘야 함.
+
+    `npm create vite@latest` <br>
+    `pnpm create vite`
+
+- 원하는 UI Framework을 골라주고, Javascript나 Typescript 중에 고르기
+
+
+### 3. React Component
+
+- 리액트로 화면을 구성하는 경우, 화면은 사용자가 볼 수 있는 여러 가지 컴포넌트로 구성
+- 리액트로 만들어진 앱을 이루는 최소한의 단위
+- 사용자에게 보여지는 UI 요소를 컴포넌트 단위로 구분하여 구현 가능
+- 컴포넌트는 재사용이 가능하고, 쉽게 새로운 컴포넌트 생성 가능
+- 데이터(props)를 입력받아 View(state) 상태에 따라 DOM Node를 출력하는 함수
+
+① 컴포넌트의 종류
+
+- 컴포넌트는 크게 함수형 컴포넌트와 클래스형 컴포넌트로 구분
+  - 함수형 컴포넌트는 `function`으로 정의하고, `return`문에 JSX 코드를 반환, 화살표(애로우) 함수로도 정의 가능
+    <br>
+    ```javascript
+    import React from "react";
+    import "./App.css";
+
+    function NameBox() {
+      const name = "test";
+      return <div>{name}</div>;
+    }
+
+    export default NameBox;
+    ```
+  - 클래스형 컴포넌트는 `class`로 정의하고, `render()`함수에서 JSX 코드 반환
+    <br>
+    ```javascript
+    import React, { Component } from "react";
+
+    class NameBox extends Component {
+    render() {
+      const name = "react";
+      return <div className="react">{name}</div>;
+      }
+    }
+
+    export default NameBox;
+    ```
+  - 클래스형 컴포넌트에서는 state를 사용할 수 있으며, 각종 라이프 사이클 및 메서드를 이용, 컴포넌트가 마운트 혹은 언마운트 될 때까지 추가 작업을 수행시키는 등 조작 가능
+  - 프로퍼티, state, 생명주기 함수가 필요한 구조의 컴포넌트를 만들 때 사용
+
+<br>
+
+② props(프로퍼티, properties)
+
+- 컴포넌트의 재사용을 가능하게 하는 특징
+- 상위 컴포넌트가 하위 컴포넌트에 값을 전달할 때 사용(단방향 흐름)
+- 자식 입장에서 봤을 때, 읽기 전용, 수정할 수 없는 데이터
+- “props”라고 하는 임의의 입력을 받은 후, 화면에 어떻게 표시되는지를 기술하는 React 엘리먼트를 반환
+
+- 프로퍼티에 문자열을 전달할 때는 큰따옴표(" ")를, 문자열 외의 값을 전달할 때는 중괄호({ })를 사용
+- 프로퍼티의 자료형을 미리 선언
+  - 리액트에서 제공하는 prop-types를 이용하여 각각의 자료형을 선언
+- children을 사용하여 내부에 있는 내용을 표현할 수 있음.
+
+<br>
+
+③ State
+- 일반적으로 컴포넌트의 내부에서 변경 가능한 데이터를 관리해야할 때에 사용
+- 컴포넌트 내부에서 값을 바꿀 수 없는 프로퍼티의 값을 바꿀 때 사용
+- 값을 저장하거나 변경할 수 있는 객체로 보통 이벤트와 함께 사용
+- 컴포넌트에서 동적인 값을 상태(state)라고 부르며, 동적인 데이터를 다룰 때 사용
+- react 모듈에서 { useState }를 불러오고 useState()를 선언해서 사용 ➡ useState의 변수값이 바뀌면 컴포넌트가 새롭게 렌더링
+  
+  ```javascript
+  const [state, setState] = useState(initialState);
+  const [ 데이터, 데이터변경함수 ] = useState(초기값(생략가능));
+  ```
