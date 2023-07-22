@@ -25,4 +25,3 @@ eval()은 인자로 받은 코드를 caller의 권한으로 수행하는 함수�
 
 각각 조건에 차이가 존재한다. <br>
 append 메서드를 활용하면, 노드 객체(Node object)나 DOMstring(text)를 사용할 수 있으며, 한 번에 여러 개의 자식 요소를 설정할 수 있다. appned 메서드는 return 값을 반환하지 않는다. appendChild 메서드는 오직 Node 객체만을 받을 수 있고, 오직 하나의 노드만 추가할 수 있다. Node가 아닌 값을 넣는 경우, 에러가 발생하고, return 값을 반환한다.
-
