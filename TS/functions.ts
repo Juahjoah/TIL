@@ -70,5 +70,30 @@ const add = (x: number, y: number): number => {
 
 const colors = ["red", "green", "blue"];
 colors.map((color) => {
+  // map 함수를 이용해 전부 대문자로 변경
   return color.toUpperCase();
 });
+
+function printTwice(msg: string): void {
+  // ":void"를 생략해도 void로 결정. 명확하게 쓰기 위해 작성
+  console.log(msg);
+  console.log(msg);
+  // return "hihi"; // void는 반환값이 없기 때문에, 반환값을 줄 수 없음.
+}
+
+function makeError(msg: string) {
+  throw new Error(msg);
+}
+function newMakeError(msg: string): never {
+  // never는 절대 반환하지 않는 함수
+  // return undefined; // never는 반환값을 줄 수 없음. return 값을 주는게 불가능함.
+  throw new Error(msg);
+}
+
+function gameLoop(): never {
+  while (true) {
+    // 무한루프
+    console.log("GAME LOOP RUNNING!");
+  }
+  // return true;
+}
