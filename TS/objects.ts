@@ -86,3 +86,51 @@ type PointTwo = {
 };
 
 const myPoint: PointTwo = { x: 1, y: 3 };
+
+// readonly 읽기 전용 프로퍼티
+type User = {
+  readonly id: number; // 읽기 전용 프로퍼티, 절대 변하면 안되는 값. 초기화 이후에는 변경 불가능
+  username: string;
+};
+
+const user: User = { id: 123, username: "Developer" };
+
+console.log(user.id); // 123
+// user.id = 456; // 오류 발생
+
+// 교차 타입
+type Circle = {
+  radius: number;
+};
+
+type Colorful = {
+  color: string;
+};
+
+type ColorfulCircle = Circle & Colorful; // 교차 타입
+
+const happyFace: ColorfulCircle = {
+  radius: 4,
+  color: "yellow",
+};
+
+// 교차 타입은 두 타입의 모든 프로퍼티를 갖는 타입을 만들어냄
+
+type Cat = {
+  numLives: number;
+};
+
+type Dog = {
+  breed: string;
+};
+// Cat과 Dog의 프로퍼티를 모두 갖는 타입 + 거기에 타입 추가 가능
+type CatDog = Cat &
+  Dog & {
+    age: number;
+  };
+
+const christy: CatDog = {
+  numLives: 7,
+  breed: "Husky",
+  age: 9,
+};
