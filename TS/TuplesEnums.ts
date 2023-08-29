@@ -61,3 +61,10 @@ ArrowKeys.LEFT;
 
 // if move === "left"
 // if move === ArrowKeys.LEFT
+
+enum ArrowKeys2 {
+  Up = "up",
+  Down = "down",
+  LEFT = "left",
+  RIGHT = "right",
+}
