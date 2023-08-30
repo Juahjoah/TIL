@@ -62,9 +62,20 @@ ArrowKeys.LEFT;
 // if move === "left"
 // if move === ArrowKeys.LEFT
 
-enum ArrowKeys2 {
-  Up = "up",
-  Down = "down",
-  LEFT = "left",
-  RIGHT = "right",
+// const name:string = "abc"
+const enum OrderState {
+  PENDING,
+  SHIPPED,
+  DELIVERED,
+  RETURNED,
 }
+
+const order = {
+  OrderState: 3821938742,
+  status: OrderState.PENDING,
+};
+
+const order2 = {
+  OrderState: 3821938742,
+  status: OrderState.DELIVERED,
+};
