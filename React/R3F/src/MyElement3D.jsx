@@ -1,10 +1,15 @@
+// MyElement3D.jsx
+import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
 
 function MyElement3D() {
   const refMesh = useRef();
+  useFrame((state, delta) => {
+    refMesh.current.rotation.y += delta;
+  });
   return (
     <>
-      <directionalLight position={[1, 1, 1]} /> {/* 조명 추가 */}
+      <directionalLight position={[1, 1, 1]} /> {/* 조명 추가. 각각 x,y,z축 */}
       {/* <mesh rotation={[0, 45*Math.PI/180, 0]}> */}
       <mesh ref={refMesh} rotation-y={(45 * Math.PI) / 180}>
         <boxGeometry /> {/* 정육면체 추가 */}
