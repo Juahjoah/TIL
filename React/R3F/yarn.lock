@@ -1726,6 +1726,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@ffmpeg/ffmpeg@npm:^0.11.6":
+  version: 0.11.6
+  resolution: "@ffmpeg/ffmpeg@npm:0.11.6"
+  dependencies:
+    is-url: ^1.2.4
+    node-fetch: ^2.6.1
+    regenerator-runtime: ^0.13.7
+    resolve-url: ^0.2.1
+  checksum: 496950c148dd16154f127106ddb533c4c84252abba875bc00c8cb1dabfaa21ba030b4fda954b7ec583b1af17fc362216d7a0c8a8ab5d346f871425cfaf392dfd
+  languageName: node
+  linkType: hard
+
 "@floating-ui/core@npm:^1.4.1":
   version: 1.4.1
   resolution: "@floating-ui/core@npm:1.4.1"
@@ -7649,6 +7661,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"is-url@npm:^1.2.4":
+  version: 1.2.4
+  resolution: "is-url@npm:1.2.4"
+  checksum: 100e74b3b1feab87a43ef7653736e88d997eb7bd32e71fd3ebc413e58c1cbe56269699c776aaea84244b0567f2a7d68dfaa512a062293ed2f9fdecb394148432
+  languageName: node
+  linkType: hard
+
 "is-weakmap@npm:^2.0.1":
   version: 2.0.1
   resolution: "is-weakmap@npm:2.0.1"
@@ -8693,7 +8712,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-fetch@npm:^2.0.0, node-fetch@npm:^2.6.7":
+"node-fetch@npm:^2.0.0, node-fetch@npm:^2.6.1, node-fetch@npm:^2.6.7":
   version: 2.7.0
   resolution: "node-fetch@npm:2.7.0"
   dependencies:
@@ -9419,6 +9438,7 @@ __metadata:
     eslint-plugin-storybook: ^0.6.13
     msw: ^1.3.0
     react: ^18.2.0
+    react-audio-voice-recorder: ^2.1.2
     react-dom: ^18.2.0
     react-icons: ^4.11.0
     react-router-dom: ^6.15.0
@@ -9455,6 +9475,29 @@ __metadata:
     iconv-lite: 0.4.24
     unpipe: 1.0.0
   checksum: 5362adff1575d691bb3f75998803a0ffed8c64eabeaa06e54b4ada25a0cd1b2ae7f4f5ec46565d1bec337e08b5ac90c76eaa0758de6f72a633f025d754dec29e
+  languageName: node
+  linkType: hard
+
+"react-audio-visualize@npm:^1.1.3":
+  version: 1.1.3
+  resolution: "react-audio-visualize@npm:1.1.3"
+  peerDependencies:
+    react: ">=16.2.0"
+    react-dom: ">=16.2.0"
+  checksum: aa75a3712f83da2c58bd34e73a7bf3d99a78f7579d3c9b0a270a05a36717b3e2f66f00c342a923c21f471e6bdb9c86478b569bdba62afa81274139fedd1ee35b
+  languageName: node
+  linkType: hard
+
+"react-audio-voice-recorder@npm:^2.1.2":
+  version: 2.1.2
+  resolution: "react-audio-voice-recorder@npm:2.1.2"
+  dependencies:
+    "@ffmpeg/ffmpeg": ^0.11.6
+    react-audio-visualize: ^1.1.3
+  peerDependencies:
+    react: ">=16.2.0"
+    react-dom: ">=16.2.0"
+  checksum: 45332419cf12d1042d7a1ca5fda7f8f8fae230018bb0bcb26908fc1407493bee1d2138e642fb01d58fe407857f38d595821b7fc165c86e2c6e13fc6e72495719
   languageName: node
   linkType: hard
 
@@ -9824,6 +9867,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"regenerator-runtime@npm:^0.13.7":
+  version: 0.13.11
+  resolution: "regenerator-runtime@npm:0.13.11"
+  checksum: 27481628d22a1c4e3ff551096a683b424242a216fee44685467307f14d58020af1e19660bf2e26064de946bad7eff28950eae9f8209d55723e2d9351e632bbb4
+  languageName: node
+  linkType: hard
+
 "regenerator-runtime@npm:^0.14.0":
   version: 0.14.0
   resolution: "regenerator-runtime@npm:0.14.0"
@@ -9939,6 +9989,13 @@ __metadata:
   version: 5.0.0
   resolution: "resolve-from@npm:5.0.0"
   checksum: 4ceeb9113e1b1372d0cd969f3468fa042daa1dd9527b1b6bb88acb6ab55d8b9cd65dbf18819f9f9ddf0db804990901dcdaade80a215e7b2c23daae38e64f5bdf
+  languageName: node
+  linkType: hard
+
+"resolve-url@npm:^0.2.1":
+  version: 0.2.1
+  resolution: "resolve-url@npm:0.2.1"
+  checksum: 7b7035b9ed6e7bc7d289e90aef1eab5a43834539695dac6416ca6e91f1a94132ae4796bbd173cdacfdc2ade90b5f38a3fb6186bebc1b221cd157777a23b9ad14
   languageName: node
   linkType: hard
 

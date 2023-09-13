@@ -52,6 +52,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-storybook", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:0.6.13"],\
             ["msw", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:1.3.0"],\
             ["react", "npm:18.2.0"],\
+            ["react-audio-voice-recorder", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:2.1.2"],\
             ["react-dom", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:18.2.0"],\
             ["react-icons", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:4.11.0"],\
             ["react-router-dom", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:6.15.0"],\
@@ -2986,6 +2987,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@fal-works-esbuild-plugin-global-externals-npm-2.1.2-b50ef0c6e7-c59715902b.zip/node_modules/@fal-works/esbuild-plugin-global-externals/",\
           "packageDependencies": [\
             ["@fal-works/esbuild-plugin-global-externals", "npm:2.1.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@ffmpeg/ffmpeg", [\
+        ["npm:0.11.6", {\
+          "packageLocation": "./.yarn/cache/@ffmpeg-ffmpeg-npm-0.11.6-1cd2718846-496950c148.zip/node_modules/@ffmpeg/ffmpeg/",\
+          "packageDependencies": [\
+            ["@ffmpeg/ffmpeg", "npm:0.11.6"],\
+            ["is-url", "npm:1.2.4"],\
+            ["node-fetch", "virtual:69431356cfe95ffad4c37842864e0551be845a81c6f566799f0690bde50ad0c8235cf559323650a057f60c6af586539c446fd79e9a619ee39bfe296d478761db#npm:2.7.0"],\
+            ["regenerator-runtime", "npm:0.13.11"],\
+            ["resolve-url", "npm:0.2.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -10428,6 +10442,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["is-url", [\
+        ["npm:1.2.4", {\
+          "packageLocation": "./.yarn/cache/is-url-npm-1.2.4-0a28aeb560-100e74b3b1.zip/node_modules/is-url/",\
+          "packageDependencies": [\
+            ["is-url", "npm:1.2.4"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["is-weakmap", [\
         ["npm:2.0.1", {\
           "packageLocation": "./.yarn/cache/is-weakmap-npm-2.0.1-88ca3d1dc4-1222bb7e90.zip/node_modules/is-weakmap/",\
@@ -12450,6 +12473,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-storybook", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:0.6.13"],\
             ["msw", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:1.3.0"],\
             ["react", "npm:18.2.0"],\
+            ["react-audio-voice-recorder", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:2.1.2"],\
             ["react-dom", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:18.2.0"],\
             ["react-icons", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:4.11.0"],\
             ["react-router-dom", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:6.15.0"],\
@@ -12501,6 +12525,60 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["react", "npm:18.2.0"],\
             ["loose-envify", "npm:1.4.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["react-audio-visualize", [\
+        ["npm:1.1.3", {\
+          "packageLocation": "./.yarn/cache/react-audio-visualize-npm-1.1.3-4843f9e559-aa75a3712f.zip/node_modules/react-audio-visualize/",\
+          "packageDependencies": [\
+            ["react-audio-visualize", "npm:1.1.3"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:36dd576120bcbdf9b67786997b844a3451ba77810b568dd44b7a7ae3adf13ea1742c3c0a135a125c127589ca83cef5b5f8f50c91dd9abcb01e59adf825b687d9#npm:1.1.3", {\
+          "packageLocation": "./.yarn/__virtual__/react-audio-visualize-virtual-9cb64c1406/0/cache/react-audio-visualize-npm-1.1.3-4843f9e559-aa75a3712f.zip/node_modules/react-audio-visualize/",\
+          "packageDependencies": [\
+            ["react-audio-visualize", "virtual:36dd576120bcbdf9b67786997b844a3451ba77810b568dd44b7a7ae3adf13ea1742c3c0a135a125c127589ca83cef5b5f8f50c91dd9abcb01e59adf825b687d9#npm:1.1.3"],\
+            ["@types/react", "npm:18.2.21"],\
+            ["@types/react-dom", "npm:18.2.7"],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react-dom",\
+            "@types/react",\
+            "react-dom",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["react-audio-voice-recorder", [\
+        ["npm:2.1.2", {\
+          "packageLocation": "./.yarn/cache/react-audio-voice-recorder-npm-2.1.2-f16f2dfa24-45332419cf.zip/node_modules/react-audio-voice-recorder/",\
+          "packageDependencies": [\
+            ["react-audio-voice-recorder", "npm:2.1.2"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:2.1.2", {\
+          "packageLocation": "./.yarn/__virtual__/react-audio-voice-recorder-virtual-36dd576120/0/cache/react-audio-voice-recorder-npm-2.1.2-f16f2dfa24-45332419cf.zip/node_modules/react-audio-voice-recorder/",\
+          "packageDependencies": [\
+            ["react-audio-voice-recorder", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:2.1.2"],\
+            ["@ffmpeg/ffmpeg", "npm:0.11.6"],\
+            ["@types/react", "npm:18.2.21"],\
+            ["@types/react-dom", "npm:18.2.7"],\
+            ["react", "npm:18.2.0"],\
+            ["react-audio-visualize", "virtual:36dd576120bcbdf9b67786997b844a3451ba77810b568dd44b7a7ae3adf13ea1742c3c0a135a125c127589ca83cef5b5f8f50c91dd9abcb01e59adf825b687d9#npm:1.1.3"],\
+            ["react-dom", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react-dom",\
+            "@types/react",\
+            "react-dom",\
+            "react"\
           ],\
           "linkType": "HARD"\
         }]\
@@ -13072,6 +13150,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["regenerator-runtime", [\
+        ["npm:0.13.11", {\
+          "packageLocation": "./.yarn/cache/regenerator-runtime-npm-0.13.11-90bf536060-27481628d2.zip/node_modules/regenerator-runtime/",\
+          "packageDependencies": [\
+            ["regenerator-runtime", "npm:0.13.11"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:0.14.0", {\
           "packageLocation": "./.yarn/cache/regenerator-runtime-npm-0.14.0-e060897cf7-1c977ad82a.zip/node_modules/regenerator-runtime/",\
           "packageDependencies": [\
@@ -13213,6 +13298,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/resolve-from-npm-5.0.0-15c9db4d33-4ceeb9113e.zip/node_modules/resolve-from/",\
           "packageDependencies": [\
             ["resolve-from", "npm:5.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["resolve-url", [\
+        ["npm:0.2.1", {\
+          "packageLocation": "./.yarn/cache/resolve-url-npm-0.2.1-39edb8f908-7b7035b9ed.zip/node_modules/resolve-url/",\
+          "packageDependencies": [\
+            ["resolve-url", "npm:0.2.1"]\
           ],\
           "linkType": "HARD"\
         }]\
