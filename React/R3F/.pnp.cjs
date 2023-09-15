@@ -50,6 +50,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-react-hooks", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:4.6.0"],\
             ["eslint-plugin-react-refresh", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:0.4.3"],\
             ["eslint-plugin-storybook", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:0.6.13"],\
+            ["lamejs", "npm:1.2.1"],\
             ["mic-recorder-to-mp3", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:2.2.2"],\
             ["msw", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:1.3.1"],\
             ["react", "npm:18.2.0"],\
@@ -12511,6 +12512,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-react-hooks", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:4.6.0"],\
             ["eslint-plugin-react-refresh", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:0.4.3"],\
             ["eslint-plugin-storybook", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:0.6.13"],\
+            ["lamejs", "npm:1.2.1"],\
             ["mic-recorder-to-mp3", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:2.2.2"],\
             ["msw", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:1.3.1"],\
             ["react", "npm:18.2.0"],\
