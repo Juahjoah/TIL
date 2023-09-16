@@ -14,6 +14,8 @@
     "noEmit": true,
     "jsx": "react-jsx",
 
+    /* 음성 녹음용 */
+    "types": ["lamejs"],
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
