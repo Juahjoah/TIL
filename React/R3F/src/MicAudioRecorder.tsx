@@ -1,6 +1,5 @@
 import MicRecorder from "mic-recorder-to-mp3";
 import { useEffect, useState } from "react";
-import Lame from "lamejs";
 
 export default function AudioRecorder() {
   const [isRecording, setIsRecording] = useState(false);

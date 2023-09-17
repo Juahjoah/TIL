@@ -64,6 +64,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["typescript", "patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441"],\
             ["vite", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:4.4.9"],\
             ["vite-tsconfig-paths", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:4.2.1"],\
+            ["wavesurfer.js", "npm:7.3.2"],\
             ["zustand", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:4.4.1"]\
           ],\
           "linkType": "SOFT"\
@@ -12526,6 +12527,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["typescript", "patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=f3b441"],\
             ["vite", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:4.4.9"],\
             ["vite-tsconfig-paths", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:4.2.1"],\
+            ["wavesurfer.js", "npm:7.3.2"],\
             ["zustand", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:4.4.1"]\
           ],\
           "linkType": "SOFT"\
@@ -15053,6 +15055,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["watchpack", "npm:2.4.0"],\
             ["glob-to-regexp", "npm:0.4.1"],\
             ["graceful-fs", "npm:4.2.11"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["wavesurfer.js", [\
+        ["npm:7.3.2", {\
+          "packageLocation": "./.yarn/cache/wavesurfer.js-npm-7.3.2-fb50acfa50-46bc650902.zip/node_modules/wavesurfer.js/",\
+          "packageDependencies": [\
+            ["wavesurfer.js", "npm:7.3.2"]\
           ],\
           "linkType": "HARD"\
         }]\

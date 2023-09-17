@@ -27,6 +27,7 @@
     "three": "^0.156.1",
     "three-stdlib": "^2.25.1",
     "vite-tsconfig-paths": "^4.2.1",
+    "wavesurfer.js": "^7.3.2",
     "zustand": "^4.4.1"
   },
   "devDependencies": {

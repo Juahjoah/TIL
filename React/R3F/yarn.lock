@@ -9475,6 +9475,7 @@ __metadata:
     typescript: ^5.0.2
     vite: ^4.4.5
     vite-tsconfig-paths: ^4.2.1
+    wavesurfer.js: ^7.3.2
     zustand: ^4.4.1
   languageName: unknown
   linkType: soft
@@ -11441,6 +11442,13 @@ __metadata:
     glob-to-regexp: ^0.4.1
     graceful-fs: ^4.1.2
   checksum: 23d4bc58634dbe13b86093e01c6a68d8096028b664ab7139d58f0c37d962d549a940e98f2f201cecdabd6f9c340338dc73ef8bf094a2249ef582f35183d1a131
+  languageName: node
+  linkType: hard
+
+"wavesurfer.js@npm:^7.3.2":
+  version: 7.3.2
+  resolution: "wavesurfer.js@npm:7.3.2"
+  checksum: 46bc650902f21e2dd4c15e03ecf718a3c5d28ed31984436d855ef3903f81d7e0054e9a06508c58fb397f0ba512a66c49f2cf70c353605df86bd3037131c0f881
   languageName: node
   linkType: hard
 
