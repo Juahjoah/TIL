@@ -5,32 +5,25 @@ export default function Audio() {
   const [latestRecording, setLatestRecording] = useState<string | null>(null);
   const recorderControls = useAudioRecorder();
 
-  // 녹음이 완료될 때마다 최신 녹음 파일을 설정합니다.
+  // 최신 녹음파일만 출력
   const addAudioElement = (blob: Blob) => {
     const url = URL.createObjectURL(blob);
     setLatestRecording(url);
   };
-
-  // 파일 저장 버튼 이벤트 리스너 제거
-  useEffect(() => {
-    const downloadButton = document.querySelector(
-      ".react-audio-voice-recorder-download-button"
-    );
-    if (downloadButton) {
-      downloadButton.removeEventListener(
-        "click",
-        recorderControls.downloadRecording
-      );
-    }
-  }, [recorderControls]);
 
   return (
     <div>
       <AudioRecorder
         onRecordingComplete={(blob: Blob) => addAudioElement(blob)}
         recorderControls={recorderControls}
+        downloadOnSavePress={false}
+        showSaveButton={false}
+        showPlayButtons={false}
+        audioTrackConstraints={{
+          noiseSuppression: true,
+          echoCancellation: true,
+        }}
       />
-      <button onClick={recorderControls.stopRecording}>Stop recording</button>
 
       {latestRecording && (
         <div>
