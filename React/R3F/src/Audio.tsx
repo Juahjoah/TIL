@@ -5,11 +5,18 @@ export default function Audio() {
   const [latestRecording, setLatestRecording] = useState<string | null>(null);
   const recorderControls = useAudioRecorder();
 
-  // 최신 녹음파일만 출력
+  // 최신 녹음파일만 출력 = 우리가 서버로 보낼 녹음 파일도 addAudioElement 파일
   const addAudioElement = (blob: Blob) => {
     const url = URL.createObjectURL(blob);
     setLatestRecording(url);
   };
+
+  // 우리가 서버로 보낼 녹음 파일도 addAudioElement 파일
+  // const sendRecordingToServer = (blob) => {
+  //   const saveFile = latestRecording;
+
+  //   // 서버로 녹음 파일 전송
+  // };
 
   return (
     <div>
@@ -17,8 +24,7 @@ export default function Audio() {
         onRecordingComplete={(blob: Blob) => addAudioElement(blob)}
         recorderControls={recorderControls}
         downloadOnSavePress={false}
-        showSaveButton={false}
-        showPlayButtons={false}
+        classes={true}
         audioTrackConstraints={{
           noiseSuppression: true,
           echoCancellation: true,
@@ -33,40 +39,3 @@ export default function Audio() {
     </div>
   );
 }
-
-// export default function Audio() {
-//   const ExampleComponent = () => {
-//     const recorderControls = useAudioRecorder();
-//     const addAudioElement = (blob: Blob) => {
-//       const url = URL.createObjectURL(blob);
-//       const audio = document.createElement("audio");
-//       audio.src = url;
-//       audio.controls = true;
-//       document.body.appendChild(audio);
-//     };
-
-//     // 파일 저장 버튼 이벤트 리스너 제거
-//     useEffect(() => {
-//       const downloadButton = document.querySelector(".react-audio-voice-recorder-download-button");
-//       if (downloadButton) {
-//         downloadButton.removeEventListener("click", recorderControls.downloadRecording);
-//       }
-//     }, [recorderControls]);
-
-//     return (
-//       <div>
-//         <AudioRecorder
-//           onRecordingComplete={(blob: Blob) => addAudioElement(blob)}
-//           recorderControls={recorderControls}
-//         />
-//         <button onClick={recorderControls.stopRecording}>Stop recording</button>
-//       </div>
-//     );
-//   };
-
-//   return (
-//     <div>
-//       <ExampleComponent />
-//     </div>
-//   );
-// }
