@@ -4,20 +4,16 @@ import App from "./App.tsx";
 import "./index.css";
 import Audio from "@/Audio.tsx";
 import AudioOption from "@/AudioOption.tsx";
-import Nouse from "@/NoUse.tsx";
-import AudioGithub from "@/AudioOptionGithub.tsx";
-
-import PayphonePage from "@/page/PayphonePage.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <Audio />
     <AudioOption />
-    <PayphonePage />
+    {/* <PayphonePage /> */}
     {/* <MicAudioRecorder /> */}
     {/* <WaveSurfer /> */}
     <App />
-    <Nouse />
+    {/* <Nouse /> */}
     {/* <AudioGithub /> */}
   </React.StrictMode>
 );
