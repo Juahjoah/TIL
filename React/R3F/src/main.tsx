@@ -18,6 +18,6 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     {/* <WaveSurfer /> */}
     <App />
     <Nouse />
-    <AudioGithub />
+    {/* <AudioGithub /> */}
   </React.StrictMode>
 );
