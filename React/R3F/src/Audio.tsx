@@ -29,6 +29,7 @@ export default function Audio() {
           noiseSuppression: true,
           echoCancellation: true,
         }}
+        downloadFileType="wav" // 확장자를 .wav로 설정
       />
 
       {latestRecording && (

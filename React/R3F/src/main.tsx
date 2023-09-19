@@ -10,11 +10,11 @@ import AudioReactRecorder from "@/AudioReactRecorder.tsx";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <Audio />
-    <AudioOption />
+    {/* <AudioOption /> */}
     <PayphonePage />
     {/* <MicAudioRecorder /> */}
     {/* <WaveSurfer /> */}
-    <App />
+    {/* <App /> */}
     <AudioReactRecorder />
     {/* <Nouse /> */}
     {/* <AudioGithub /> */}

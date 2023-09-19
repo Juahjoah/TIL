@@ -1,77 +1,136 @@
-import { Component } from "react";
-import AudioReactRecorder, {
-  RecordState,
-  AudioData,
-} from "audio-react-recorder";
+import { useState } from "react";
+import AudioReactRecorder, { RecordState } from "audio-react-recorder";
 
-// 컴포넌트의 props와 state의 타입을 정의합니다.
-interface AppState {
-  recordState: RecordState | null;
+export default function AudioReactRecorderComponent() {
+  const [recordState, setRecordState] = useState(RecordState.STOP);
+  const [audioData, setAudioData] = useState<any>(null);
+  const [recordingMessage, setRecordingMessage] = useState(""); // 녹음 상태 메시지
+
+  const startRecording = () => {
+    setAudioData(null);
+    setRecordState(RecordState.START);
+    setRecordingMessage("녹음 중..."); // 녹음 시작 시 메시지 설정
+  };
+
+  const stopRecording = () => {
+    setRecordState(RecordState.STOP);
+    setRecordingMessage(""); // 녹음 중지 시 메시지 초기화
+  };
+
+  const pauseRecording = () => {
+    setRecordState(RecordState.PAUSE);
+    setRecordingMessage("일시 중지됨"); // 일시 중지 시 메시지 설정
+  };
+
+  const resumeRecording = () => {
+    setRecordState(RecordState.RESUME);
+    setRecordingMessage("녹음 중..."); // 다시 시작 시 메시지 설정
+  };
+
+  const handleAudioData = (data: any) => {
+    setAudioData(data);
+  };
+
+  return (
+    <div>
+      <AudioReactRecorder
+        state={recordState}
+        type={"audio/wav"}
+        onStop={handleAudioData}
+        backgroundColor="rgb(255,255,255)"
+      />
+      <button onClick={startRecording}>Start Recording</button>
+      <button onClick={stopRecording}>Stop Recording</button>
+      {recordState === RecordState.START && (
+        <button onClick={pauseRecording}>Pause Recording</button>
+      )}
+      {recordState === RecordState.PAUSE && (
+        <button onClick={resumeRecording}>Resume Recording</button>
+      )}
+      {audioData && (
+        <div>
+          <audio controls src={audioData.url} />
+        </div>
+      )}
+      <div>{recordingMessage}</div> {/* 녹음 상태 메시지 출력 */}
+    </div>
+  );
 }
 
-class App extends Component<{}, AppState> {
-  constructor(props: {}) {
-    super(props);
+// import { Component } from "react";
+// import AudioReactRecorder, {
+//   RecordState,
+//   AudioData,
+// } from "audio-react-recorder";
 
-    this.state = {
-      recordState: null,
-    };
-  }
+// // 컴포넌트의 props와 state의 타입을 정의합니다.
+// interface AppState {
+//   recordState: RecordState | null;
+// }
 
-  start = () => {
-    this.setState({
-      recordState: RecordState.START,
-    });
-  };
+// class App extends Component<{}, AppState> {
+//   constructor(props: {}) {
+//     super(props);
 
-  pause = () => {
-    this.setState({
-      recordState: RecordState.PAUSE,
-    });
-  };
+//     this.state = {
+//       recordState: null,
+//     };
+//   }
 
-  stop = () => {
-    this.setState({
-      recordState: RecordState.STOP,
-    });
-  };
+//   start = () => {
+//     this.setState({
+//       recordState: RecordState.START,
+//     });
+//   };
 
-  // audioData 매개변수의 타입을 AudioData로 지정합니다.
-  onStop = (audioData: AudioData) => {
-    this.setState({
-      audioData,
-    });
-    console.log("audioData", audioData);
-  };
+//   pause = () => {
+//     this.setState({
+//       recordState: RecordState.PAUSE,
+//     });
+//   };
 
-  render() {
-    const { recordState } = this.state;
+//   stop = () => {
+//     this.setState({
+//       recordState: RecordState.STOP,
+//     });
+//   };
 
-    return (
-      <div>
-        <AudioReactRecorder
-          state={recordState}
-          onStop={this.onStop}
-          backgroundColor="rgb(255,255,255)"
-        />
+//   // audioData 매개변수의 타입을 AudioData로 지정합니다.
+//   onStop = (audioData: AudioData) => {
+//     this.setState({
+//       audioData,
+//     });
+//     console.log("audioData", audioData);
+//   };
 
-        <audio
-          id="audio"
-          controls
-          src={this.state.audioData ? this.state.audioData.url : null}
-        ></audio>
-        <button id="record" onClick={this.start}>
-          Start
-        </button>
-        <button id="pause" onClick={this.pause}>
-          Pause
-        </button>
-        <button id="stop" onClick={this.stop}>
-          Stop
-        </button>
-      </div>
-    );
-  }
-}
+//   render() {
+//     const { recordState } = this.state;
 
-export default App;
+//     return (
+//       <div>
+//         <AudioReactRecorder
+//           state={recordState}
+//           onStop={this.onStop}
+//           backgroundColor="rgb(255,255,255)"
+//         />
+
+//         <audio
+//           id="audio"
+//           controls
+//           src={this.state.audioData ? this.state.audioData.url : null}
+//         ></audio>
+//         <button id="record" onClick={this.start}>
+//           Start
+//         </button>
+//         <button id="pause" onClick={this.pause}>
+//           Pause
+//         </button>
+//         <button id="stop" onClick={this.stop}>
+//           Stop
+//         </button>
+//       </div>
+//     );
+//   }
+// }
+
+// export default App;
