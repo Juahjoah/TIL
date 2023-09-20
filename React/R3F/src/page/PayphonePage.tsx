@@ -4,6 +4,7 @@ import { OrbitControls, Stage } from "@react-three/drei";
 import Audio from "@/Audio.tsx";
 import Payphone from "@/models/Payphone";
 import Modal from "./../component/Modal";
+import AudioReactRecorder from "@/AudioReactRecorder.tsx";
 
 export default function PayphonePage() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -31,10 +32,10 @@ export default function PayphonePage() {
       <Modal
         modalOpen={modalOpen}
         onClose={closeModal}
-        title="클릭을 확인하겠습니다"
-        buttonLabel="확인"
+        title="녹음을 테스트해보겠습니다."
+        buttonLabel="닫기"
       >
-        <Audio />
+        <AudioReactRecorder />
       </Modal>
     </div>
   );

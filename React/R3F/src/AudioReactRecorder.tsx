@@ -6,25 +6,26 @@ export default function AudioReactRecorderComponent() {
   const [audioData, setAudioData] = useState<any>(null);
   const [recordingMessage, setRecordingMessage] = useState(""); // 녹음 상태 메시지
 
+  // 녹음 시작
   const startRecording = () => {
     setAudioData(null);
     setRecordState(RecordState.START);
-    setRecordingMessage("녹음 중..."); // 녹음 시작 시 메시지 설정
+    setRecordingMessage("녹음 중...");
   };
-
+  // 녹음 중지/끝
   const stopRecording = () => {
     setRecordState(RecordState.STOP);
-    setRecordingMessage(""); // 녹음 중지 시 메시지 초기화
+    setRecordingMessage("");
   };
-
+  // 일시 중지
   const pauseRecording = () => {
     setRecordState(RecordState.PAUSE);
-    setRecordingMessage("일시 중지됨"); // 일시 중지 시 메시지 설정
+    setRecordingMessage("일시 중지됨");
   };
-
+  // 정지 후 재시작
   const resumeRecording = () => {
     setRecordState(RecordState.RESUME);
-    setRecordingMessage("녹음 중..."); // 다시 시작 시 메시지 설정
+    setRecordingMessage("녹음 중...");
   };
 
   const handleAudioData = (data: any) => {
@@ -52,7 +53,10 @@ export default function AudioReactRecorderComponent() {
           <audio controls src={audioData.url} />
         </div>
       )}
-      <div>{recordingMessage}</div> {/* 녹음 상태 메시지 출력 */}
+      <div>{recordingMessage}</div>
+      <button onClick={() => console.log("녹음 axios랑 연결하기")}>
+        업로드하기
+      </button>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { AudioRecorder, useAudioRecorder } from "react-audio-voice-recorder";
 
 export default function Audio() {
@@ -24,12 +24,12 @@ export default function Audio() {
         onRecordingComplete={(blob: Blob) => addAudioElement(blob)}
         recorderControls={recorderControls}
         downloadOnSavePress={false}
+        downloadFileType="wav" // 확장자를 .wav로 설정
         classes={true}
         audioTrackConstraints={{
           noiseSuppression: true,
           echoCancellation: true,
         }}
-        downloadFileType="wav" // 확장자를 .wav로 설정
       />
 
       {latestRecording && (

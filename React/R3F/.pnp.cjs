@@ -61,6 +61,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-audio-voice-recorder", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:2.1.2"],\
             ["react-dom", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:18.2.0"],\
             ["react-icons", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:4.11.0"],\
+            ["react-microphone-recorder", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:1.0.0"],\
             ["react-modal", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:3.16.1"],\
             ["react-router-dom", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:6.16.0"],\
             ["storybook", "npm:7.4.1"],\
@@ -12615,6 +12616,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-audio-voice-recorder", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:2.1.2"],\
             ["react-dom", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:18.2.0"],\
             ["react-icons", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:4.11.0"],\
+            ["react-microphone-recorder", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:1.0.0"],\
             ["react-modal", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:3.16.1"],\
             ["react-router-dom", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:6.16.0"],\
             ["storybook", "npm:7.4.1"],\
@@ -12993,6 +12995,32 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/react-merge-refs-npm-1.1.0-26c3215fdd-9088435299.zip/node_modules/react-merge-refs/",\
           "packageDependencies": [\
             ["react-merge-refs", "npm:1.1.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["react-microphone-recorder", [\
+        ["npm:1.0.0", {\
+          "packageLocation": "./.yarn/cache/react-microphone-recorder-npm-1.0.0-02c0ed8d67-4262da3d2f.zip/node_modules/react-microphone-recorder/",\
+          "packageDependencies": [\
+            ["react-microphone-recorder", "npm:1.0.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:1.0.0", {\
+          "packageLocation": "./.yarn/__virtual__/react-microphone-recorder-virtual-fa08331219/0/cache/react-microphone-recorder-npm-1.0.0-02c0ed8d67-4262da3d2f.zip/node_modules/react-microphone-recorder/",\
+          "packageDependencies": [\
+            ["react-microphone-recorder", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:1.0.0"],\
+            ["@types/react", "npm:18.2.21"],\
+            ["@types/react-dom", "npm:18.2.7"],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:80fda54cc27675f0df16ad4cae99d3997d79c33adbf73b0789df13a8bd53e7ef92139a410915775bebba66ad24584473e0a85caf2f461f8642617147f38c9e3c#npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react-dom",\
+            "@types/react",\
+            "react-dom",\
+            "react"\
           ],\
           "linkType": "HARD"\
         }]\

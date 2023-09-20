@@ -13,6 +13,8 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+    // 타입스크립트 밑줄 오류 제거
+    "typeRoots": ["./@types", "./node_modules/@types"],
 
     /* Linting */
     "strict": true,

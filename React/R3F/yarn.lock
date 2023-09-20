@@ -9531,6 +9531,7 @@ __metadata:
     react-audio-voice-recorder: ^2.1.2
     react-dom: ^18.2.0
     react-icons: ^4.11.0
+    react-microphone-recorder: ^1.0.0
     react-modal: ^3.16.1
     react-router-dom: ^6.16.0
     storybook: 7.4.1
@@ -9739,6 +9740,16 @@ __metadata:
   version: 1.1.0
   resolution: "react-merge-refs@npm:1.1.0"
   checksum: 90884352999002d868ab9f1bcfe3222fb0f2178ed629f1da7e98e5a9b02a2c96b4aa72800db92aabd69d2483211b4be57a2088e89a11a0b660e7ada744d4ddf7
+  languageName: node
+  linkType: hard
+
+"react-microphone-recorder@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "react-microphone-recorder@npm:1.0.0"
+  peerDependencies:
+    react: ">=16.8.0 || >=17.0.0"
+    react-dom: ">=16.8.0 || >=17.0.0"
+  checksum: 4262da3d2f7b4bd656f4464270f02345939abbe56f9114afd60d2c835ace3d541b50a85c0dc0e4e097d0ef10484e8998f411dd5d4ac5cd2e932abfad86bac359
   languageName: node
   linkType: hard
 
