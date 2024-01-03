@@ -124,3 +124,16 @@
 
 - 추가로 React Native는 HTML 문법을 사용하지 않고, Components를 사용
 - 호환성 이슈가 존재하고, 앱을 만드는 것이 아니라 네이티브 앱처럼 보이는 앱을 작성해야 하기 때문에 iOS/Android 개발자가 수년간 사용해 온 것과 동일한 UI 가이드라인과 디자인 표준을 사용
+
+### 4. CRA(Create React App)로 React 프로젝트 생성
+
+- CRA는 React 기반 프로젝트를 빠르고 쉽게 구축할 수 있도록 도와주는 공식적인 스타트 키트
+- React 개발을 시작하는 데 필요한 모든 설정을 사전에 구성해놓은 도구라고 볼 수 있고, Webpack, Babel, ESLint 등의 복잡한 환경 설정 과정없이 바로 React 프로젝트를 시작 가능
+
+  ```
+  npx install -g create-react-app
+  npx create-react-app [프로젝트 명]
+  cd [프로젝트 명] # 해당 폴더로 이동한 후, 프로젝트 실행
+  npm start
+
+  ```
