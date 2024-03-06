@@ -2,8 +2,38 @@
 
 <h3> 아이디어를 직접 구현하기 위한 개발자가 되기 위한 나의 노력🤞 </h3>
 
-<h1> 2024년 1월 목표</h1>
+# [JavaScript](/TIL/Algorithm/)
 
-1. 잊지말자, 알고리즘! → 매일 한 문제씩 풀기<br>
-2. 프로젝트 개인 회고 추가 작성하기 + README.md 수정하기 <br>
-3. CI/CD 학습하기<br>
+-
+
+# [TypeScript](/TIL/TS/)
+
+-
+
+# [React](/TIL//React/)
+
+-
+
+# [Next.js](/TIL/Next.js/)
+
+-
+
+# [Vue.js](/TIL/Vue.js/)
+
+-
+
+# [SQL](/TIL/SQL/)
+
+-
+
+# [Django](/TIL/Django/)
+
+-
+
+# [Algorithm](/TIL/Algorithm/)
+
+-
+
+# [Git](/TIL/GIT/)
+
+-
