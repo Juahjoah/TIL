@@ -24,7 +24,7 @@
 
 # [SQL](/TIL/SQL/)
 
--
+- NULL
 
 # [Django](/TIL/Django/)
 
