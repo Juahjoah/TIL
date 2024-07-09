@@ -2,7 +2,7 @@
 
 <h3> 아이디어를 직접 구현하기 위한 개발자가 되기 위한 나의 노력🤞 </h3>
 
-- test
+
 # [JavaScript](/TIL/Algorithm/)
 
 -
